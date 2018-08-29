@@ -4,6 +4,7 @@ import './App.css';
 
 import * as firebase from "firebase";
 import RoomList from './components/RoomList';
+import MessageList from './components/MessageList';
 
 
 
@@ -20,15 +21,19 @@ import RoomList from './components/RoomList';
 
 
 class App extends Component {
+
   render() {
     return (
       <div className="App">
 
          <h1>Bloc Chat</h1>
           <RoomList firebase = {firebase} />
+          <h1>Messages</h1>
+          <MessageList firebase = {firebase}/>
 
 
       </div>
+
     );
   }
 }
