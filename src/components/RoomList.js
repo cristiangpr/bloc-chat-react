@@ -27,10 +27,13 @@ handleSubmit(e){
   e.preventDefault();
   this.roomsRef.push({
   name: this.state.newRoomName});
+ e.target.reset();
+
 
 }
   handleChange(e) {
   this.setState({ newRoomName: e.target.value })
+
 }
 
 
@@ -53,7 +56,7 @@ handleSubmit(e){
                         Name:
                         <input type="text" name={this.state.newRoomName} />
                      </label>
-                     <input type="submit" value="Submit" />
+                     <input type="submit" value="Submit"/>
                    </form>
 
             </div>

@@ -28,8 +28,9 @@ handleSubmit(e){
   username: " ",
   content: this.state.newMessage,
   roomId: " ",
-  timeStamp: this.props.firebase.database.ServerValue.TIMESTAMP
+  timeStamp: this.props.firebase.database.ServerValue.TIMESTAMP,
   });
+  e.target.reset();
 
 }
   handleChange(e) {
