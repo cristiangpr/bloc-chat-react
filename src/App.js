@@ -21,13 +21,31 @@ import MessageList from './components/MessageList';
 
 
 class App extends Component {
+  constructor(props){
+    super(props);
+
+this.setActiveRoom = this.setActiveRoom.bind(this);
+
+    this.state = {
+      activeRoom: " "
+    }
+  }
+
+
+
+  setActiveRoom(room) {
+
+
+    this.setState({ activeRoom: room });
+        console.log(this.state.activeRoom);
+}
 
   render() {
     return (
       <div className="App">
 
          <h1>Bloc Chat</h1>
-          <RoomList firebase = {firebase} />
+          <RoomList firebase = {firebase} action = {this.setActiveRoom} />
           <h1>Messages</h1>
           <MessageList firebase = {firebase}/>
 

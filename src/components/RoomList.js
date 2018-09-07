@@ -43,7 +43,7 @@ handleSubmit(e){
                 <div className='room-list'>
                     {
                         this.state.rooms.map((room, index) => {
-                          return ( <div className="room-info" key={index} >{room.name}</div>)
+                          return ( <div className="room-info" key={index} onClick={this.props.action} >{room.name}</div>)
                         })
                     }
                 </div>
