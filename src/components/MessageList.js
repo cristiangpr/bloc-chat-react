@@ -25,7 +25,7 @@ this.state = {
 handleSubmit(e){
   e.preventDefault();
   this.messagesRef.push({
-  username: " ",
+  username: this.props.user,
   content: this.state.newMessage,
   roomId: this.props.value,
   timeStamp: this.props.firebase.database.ServerValue.TIMESTAMP,
