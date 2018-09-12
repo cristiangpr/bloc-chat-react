@@ -27,10 +27,11 @@ handleSubmit(e){
   this.messagesRef.push({
   username: " ",
   content: this.state.newMessage,
-  roomId: " ",
+  roomId: this.props.value,
   timeStamp: this.props.firebase.database.ServerValue.TIMESTAMP,
+
   });
-  e.target.reset();
+     e.target.reset();
 
 }
   handleChange(e) {
@@ -43,9 +44,10 @@ render() {
       return (
           <div className='messages'>
               <div className='message-list'>
-                  {
-                      this.state.messages.map((message, index) => {
-                        console.log(message)
+                  {this.state.messages.filter((item) => item.roomId === this.props.value)
+                    .map((message, index) => {
+                        console.log(message);
+
                         return ( <div className="message-text" key={index}>{message.content}</div>)
                       })
                   }
