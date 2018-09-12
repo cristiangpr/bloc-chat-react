@@ -27,6 +27,7 @@ handleSubmit(e){
   e.preventDefault();
   this.roomsRef.push({
   name: this.state.newRoomName});
+   e.target.reset();
 
 }
   handleChange(e) {
@@ -43,7 +44,7 @@ handleSubmit(e){
                 <div className='room-list'>
                     {
                         this.state.rooms.map((room, index) => {
-                          return ( <div className="room-info" key={index} onClick={this.props.action} >{room.name}</div>)
+                          return ( <div className="room-info" key={index} onClick={() => this.props.action(room)} >{room.name}</div>)
                         })
                     }
                 </div>

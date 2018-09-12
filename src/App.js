@@ -34,9 +34,7 @@ this.setActiveRoom = this.setActiveRoom.bind(this);
 
 
   setActiveRoom(room) {
-
-
-    this.setState({ activeRoom: room });
+        this.setState({ activeRoom: room });
         console.log(this.state.activeRoom);
 }
 
@@ -47,7 +45,7 @@ this.setActiveRoom = this.setActiveRoom.bind(this);
          <h1>Bloc Chat</h1>
           <RoomList firebase = {firebase} action = {this.setActiveRoom} />
           <h1>Messages</h1>
-          <MessageList firebase = {firebase}/>
+          <MessageList firebase = {firebase} value = {this.state.activeRoom.key}/>
 
 
       </div>
