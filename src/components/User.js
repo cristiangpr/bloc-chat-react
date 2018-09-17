@@ -27,7 +27,7 @@ displayUser(){
   return "Guest";
 }
 else {
-  return <div>{this.props.user.displayName}</div>;
+  return <p>{this.props.user.displayName}</p>;
 }
 }
 
@@ -39,8 +39,8 @@ return (
      <input type="button" value="Sign-in" onClick = {(e) => this.handleSignIn(e)} />
      <input type="button" value="Sign-out" onClick ={(e) => this.handleSignOut(e)}/>
 
-<p>{this.displayUser()}
-</p>
+<div>{this.displayUser()}
+</div>
 </div>
 
 );

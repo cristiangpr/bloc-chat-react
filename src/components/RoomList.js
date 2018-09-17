@@ -52,10 +52,10 @@ handleSubmit(e){
                     <form onSubmit= {(e) => this.handleSubmit(e)}
                     onChange= {(e) => this.handleChange(e)}>
                       <label>
-                        Name:
+                      Room Name:
                         <input type="text" name={this.state.newRoomName} />
                      </label>
-                     <input type="submit" value="Submit"/>
+                     <input type="submit" value="New Room"/>
                    </form>
 
             </div>

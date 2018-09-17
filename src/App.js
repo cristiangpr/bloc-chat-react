@@ -48,17 +48,16 @@ this.setUser = this.setUser.bind(this);
     return (
       <div className="App">
 
-         <h1>Bloc Chat</h1>
-          <RoomList firebase = {firebase} action = {this.setActiveRoom} />
-          <h1>Messages</h1>
+     <h1>Bloc Chat</h1>
+      <RoomList firebase = {firebase} action = {this.setActiveRoom} />
+      <h1>Messages</h1>
 
-          <MessageList firebase = {firebase} value = {this.state.activeRoom.key}/>
-          <h1>Authentication</h1>
-          <User firebase = {firebase} setUser = {this.setUser} user = {this.state.user}/>
+      <MessageList firebase = {firebase} value = {this.state.activeRoom.key}/>
+      <h1>Authentication</h1>
+      <User firebase = {firebase} setUser = {this.setUser} user = {this.state.user}/>
 
 
-      </div>
-
+  </div>
     );
   }
 }
