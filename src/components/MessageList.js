@@ -1,5 +1,5 @@
 import React, { Component } from 'react';
-import './MessageList.css'
+
 
 class MessageList extends Component {
   constructor(props){
@@ -24,15 +24,16 @@ this.state = {
 
 handleSubmit(e){
   e.preventDefault();
-  this.messagesRef.push({
-  username: this.props.user,
-  content: this.state.newMessage,
-  roomId: this.props.value,
-  timeStamp: this.props.firebase.database.ServerValue.TIMESTAMP,
-
-  });
-     e.target.reset();
-
+  console.log(this.props.user.displayName);
+  var newMessage = {
+    username: this.props.user.displayName,
+    content: this.state.newMessage,
+    roomId: this.props.value,
+    timeStamp: this.props.firebase.database.ServerValue.TIMESTAMP,
+  }
+  console.log(newMessage);
+  this.messagesRef.push(newMessage);
+  e.target.reset();
 }
   handleChange(e) {
   this.setState({ newMessage: e.target.value })
@@ -48,7 +49,7 @@ render() {
                     .map((message, index) => {
                         console.log(message);
 
-                        return ( <div className="message-text" key={index}><span id="username">{message.username}: </span>{message.content} }</div>)
+                        return ( <div className="message-text" key={index}><span>{this.props.user.displayName}: </span>{message.content}</div>)
                       })
                   }
               </div>
@@ -56,7 +57,7 @@ render() {
                   onChange= {(e) => this.handleChange(e)}>
                     <label>
                       Message:
-                      <input type="text"  content={this.state.newMessage}  />
+                      <input type="text" content={this.state.newMessage} />
                    </label>
                    <input type="submit" value="Submit" />
                  </form>

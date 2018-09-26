@@ -7,6 +7,9 @@ class User extends Component {
     componentDidMount(){
 
   this.props.firebase.auth().onAuthStateChanged( user => {
+    console.log(user); if ( user=== null){
+      user = {displayName: "Guest"}
+    }
   this.props.setUser(user);
 });
     }
@@ -21,15 +24,10 @@ class User extends Component {
    }
 
 displayUser(){
-  if
-    (this.props.user === null){
 
-  return "Guest";
+  return this.props.user.displayName;
 }
-else {
-  return <p>{this.props.user.displayName}</p>;
-}
-}
+
 
 render(){
 return (
@@ -39,8 +37,8 @@ return (
      <input type="button" value="Sign-in" onClick = {(e) => this.handleSignIn(e)} />
      <input type="button" value="Sign-out" onClick ={(e) => this.handleSignOut(e)}/>
 
-<div>{this.displayUser()}
-</div>
+<p>{this.displayUser()}
+</p>
 </div>
 
 );
