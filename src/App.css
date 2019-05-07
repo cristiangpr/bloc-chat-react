@@ -22,7 +22,20 @@
   font-size: large;
 }
 
+.message-text{
+  text-align: left;
+}
+
 @keyframes App-logo-spin {
   from { transform: rotate(0deg); }
   to { transform: rotate(360deg); }
+}
+
+#sidebar{
+  margin-left: 0px;
+
+
+}
+#page{
+    height: 800px;
 }

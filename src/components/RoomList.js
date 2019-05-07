@@ -43,20 +43,21 @@ handleSubmit(e){
         return (
             <div className='rooms'>
                 <div className='room-list'>
+                <form onSubmit= {(e) => this.handleSubmit(e)}
+                onChange= {(e) => this.handleChange(e)}>
+                  <label>
+
+                    <input type="text" name={this.state.newRoomName} />
+                 </label>
+                 <input type="submit" value="New Room"/>
+               </form>
                     {
                         this.state.rooms.map((room, index) => {
                           return ( <div className="room-info" key={index} onClick={() => this.props.action(room)} >{room.name}</div>)
                         })
                     }
                 </div>
-                    <form onSubmit= {(e) => this.handleSubmit(e)}
-                    onChange= {(e) => this.handleChange(e)}>
-                      <label>
-                        Name:
-                        <input type="text" name={this.state.newRoomName} />
-                     </label>
-                     <input type="submit" value="Submit"/>
-                   </form>
+
 
             </div>
         );

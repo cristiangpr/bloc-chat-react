@@ -1,5 +1,5 @@
 import React, { Component } from 'react';
-
+import "../App.css"
 
 class MessageList extends Component {
   constructor(props){
@@ -49,7 +49,7 @@ render() {
                     .map((message, index) => {
                         console.log(message);
 
-                        return ( <div className="message-text" key={index}><span>{this.props.user.displayName}: </span>{message.content}</div>)
+                        return ( <div className="message-text light bg-light" key={index}><p>{this.props.user.displayName}: <br/>{message.content}</p></div>)
                       })
                   }
               </div>
