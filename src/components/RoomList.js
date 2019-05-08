@@ -1,5 +1,5 @@
 import React, { Component } from 'react';
-
+import '../App.css'
 class RoomList extends Component {
   constructor(props){
     super(props);
@@ -49,7 +49,7 @@ handleSubmit(e){
 
                     <input type="text" name={this.state.newRoomName} />
                  </label>
-                 <input type="submit" value="New Room"/>
+                 <input type="submit" value="New Room" className="btn btn-secondary"/>
                </form>
                     {
                         this.state.rooms.map((room, index) => {

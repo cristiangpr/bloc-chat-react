@@ -59,6 +59,7 @@ this.setUser = this.setUser.bind(this);
             </div>
             <div className="col-md-9">
           <h1> {this.state.activeRoom.name}</h1>
+          <h3>Click on a room to start chatting!</h3>
 
           <MessageList firebase = {firebase} value = {this.state.activeRoom.key} user= {this.state.user}/>
 

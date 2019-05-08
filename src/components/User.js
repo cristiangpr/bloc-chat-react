@@ -34,8 +34,8 @@ return (
 <div>
 
 
-     <input type="button" value="Sign-in" onClick = {(e) => this.handleSignIn(e)} />
-     <input type="button" value="Sign-out" onClick ={(e) => this.handleSignOut(e)}/>
+     <input type="button" value="Sign-in" className="btn btn-success" onClick = {(e) => this.handleSignIn(e)} />
+  <span>   <input type="button" value="Sign-out" className="btn btn-danger" onClick ={(e) => this.handleSignOut(e)}/></span>
 
 <p>{this.displayUser()}
 </p>

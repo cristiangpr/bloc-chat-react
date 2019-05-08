@@ -59,7 +59,7 @@ render() {
                       Message:
                       <input type="text" content={this.state.newMessage} />
                    </label>
-                   <input type="submit" value="Submit" />
+                  <span> <input type="submit" value="Submit" className="btn btn-success"/> </span>
                  </form>
 
           </div>
